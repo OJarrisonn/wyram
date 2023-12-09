@@ -2,5 +2,6 @@
 /lib/wyram-core/target
 /app/.godot/shader_cache
 /app/.godot/editor
+/app/.godot/mono
 **/.DS_Store
 **/._*
