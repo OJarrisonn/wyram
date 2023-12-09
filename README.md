@@ -35,3 +35,11 @@ The city inside the Jumonth's head (a lengendary giant dragon, the biggest being
 The project is splited into three main parts: `app` (the godot project), `lib` (the rust source code) and `res` (the visual elements).
 
 The project uses Godot 4.2 and godot-rust.
+
+### Target Platforms
+
+The supported rust targets are:
+
+- x86_64-unknown-linux-gnu
+- x86_64-pc-windows-gnu
+
