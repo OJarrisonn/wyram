@@ -1,4 +1,4 @@
-# Wyram
+Wyram
 
 The sun vanished, maybe you're the hero who can save everything.
 
@@ -43,12 +43,12 @@ The supported rust targets are:
 
 Current versions are:
 
-- Rustup: 1.26.0
-- Rust: 1.74.1
-- Cargo: 1.74.1
-- Godot Mono: 4.2
-- Godot-Rust: `git`
-- .NET SDK: 8
+- [Rustup](https://rustup.rs/): 1.26.0
+- [Rust](https://www.rust-lang.org/): 1.74.1
+- [Cargo](https://github.com/rust-lang/cargo): 1.74.1
+- [Godot Mono](https://godotengine.org/): 4.2
+- [Godot-Rust](https://github.com/godot-rust): `git`
+- [.NET SDK](https://dotnet.microsoft.com/): 8.0
 
 Web/Mobile versions are **not** a priority at the moment as both Godot 4.2 C# has no support for both, nor Godot Rust.
 
