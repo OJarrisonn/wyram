@@ -1,14 +1,8 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use godot::prelude::*;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+mod gameobj;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+struct WyramCore;
+
+#[gdextension]
+unsafe impl ExtensionLibrary for WyramCore {}
