@@ -1,0 +1,6 @@
+**/.vscode
+/lib/wyram-core/target
+/app/.godot/shader_cache
+/app/.godot/editor
+**/.DS_Store
+**/._*
