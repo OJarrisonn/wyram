@@ -30,11 +30,11 @@ The city that where sister of Nyhhay before Terminus. Yuhhay sorceres completely
 
 The city inside the Jumonth's head (a lengendary giant dragon, the biggest being ever). The qhaarfi built their defenses with the indestructible bones of Jumonth and keep themselves safe and closed inside the city for ages.
 
-## Organization
+## Project Organization
 
 The project is splited into three main parts: `app` (the godot project), `lib` (the rust source code) and `res` (the visual elements).
 
-### Target Platforms and Versions
+### Platforms and Versions
 
 The supported rust targets are:
 
@@ -48,3 +48,38 @@ Current versions are:
 - Cargo: 1.74.1
 - Godot Mono: 4.2
 - Godot-Rust: `git`
+- .NET SDK: 8
+
+Web/Mobile versions are **not** a priority at the moment as both Godot 4.2 C# has no support for both, nor Godot Rust.
+
+### Languages Structure
+
+Idealy, every entity will have a rust implementation.
+
+1. Simple behaviour is implemented in GDScript;
+2. Heavy computational scripts/functions can be implemented first in GDScript then later ported to C#
+3. Nodes and game objects can be first implemented in GDScript as scenes, then later ported to Rust
+
+### Future Targets
+
+Add some sort of modding API for the game that let modders create new items, buildings and creatures.
+
+Also, Lua support as an embed in-game programming language for building computers and that kind of stuff may happen.
+
+### Present Targets (AKA TODO List)
+
+- [ ] Living
+  - [ ] 8-directional normalized movement
+  - [ ] Sprint
+- [ ] Player : Living
+  - [ ] Interaction
+    - [ ] Interaction radius around the player
+    - [ ] Interacts with the object beneath the mouse pointer if there's any, otherwise interacts with the closest object
+  - [ ] Inventory
+- [ ] World
+  - [ ] 2 layer world
+    - [ ] Ground layer
+    - [ ] Building layer
+- [ ] Building
+- [ ] UI
+  - Player info
