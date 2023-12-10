@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct8eubxyhmhvv"]
+
+[ext_resource type="Script" path="res://gameobj/living/player/player.gd" id="1_0fneq"]
+[ext_resource type="PackedScene" uid="uid://diwg2u05gihy2" path="res://gameobj/living/player/player_input.tscn" id="2_gm0xv"]
+[ext_resource type="Texture2D" uid="uid://bacmt3nxheqo1" path="res://assets/living/player/player.png" id="3_ioc8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqn8"]
+size = Vector2(24, 57)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_0fneq")
+
+[node name="player_input" parent="." instance=ExtResource("2_gm0xv")]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ioc8k")
+vframes = 3
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_qiqn8")
+
+[node name="camera" type="Camera2D" parent="."]
+
+[connection signal="move" from="player_input" to="." method="recv_movement"]
+[connection signal="start_running" from="player_input" to="." method="recv_start_run"]
+[connection signal="stop_running" from="player_input" to="." method="recv_stop_run"]
