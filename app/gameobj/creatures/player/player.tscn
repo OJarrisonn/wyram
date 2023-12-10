@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct8eubxyhmhvv"]
+
+[ext_resource type="Script" path="res://gameobj/creatures/player/player.gd" id="1_0fneq"]
+[ext_resource type="Texture2D" uid="uid://cmmc5nws8wgwp" path="res://icon.svg" id="1_blxap"]
+[ext_resource type="PackedScene" uid="uid://diwg2u05gihy2" path="res://gameobj/creatures/player/player_keymap.tscn" id="2_gm0xv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqn8"]
+size = Vector2(50, 50)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_0fneq")
+
+[node name="player_keymap" parent="." instance=ExtResource("2_gm0xv")]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("1_blxap")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qiqn8")
+
+[node name="camera" type="Camera2D" parent="."]
+
+[connection signal="walk_to" from="player_keymap" to="." method="walk_to"]
