@@ -69,8 +69,8 @@ Also, Lua support as an embed in-game programming language for building computer
 ### Present Targets (AKA TODO List)
 
 - [ ] Living
-  - [ ] 8-directional normalized movement
-  - [ ] Sprint
+  - [x] 8-directional normalized movement
+  - [x] Sprint
 - [ ] Player : Living
   - [ ] Interaction
     - [ ] Interaction radius around the player
