@@ -22,4 +22,6 @@ shape = SubResource("RectangleShape2D_qiqn8")
 
 [node name="camera" type="Camera2D" parent="."]
 
-[connection signal="walk_to" from="player_keymap" to="." method="walk_to"]
+[connection signal="move" from="player_keymap" to="." method="recv_movement"]
+[connection signal="start_running" from="player_keymap" to="." method="recv_start_run"]
+[connection signal="stop_running" from="player_keymap" to="." method="recv_stop_run"]

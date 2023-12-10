@@ -11,4 +11,3 @@ scale = Vector2(4.75, 3.52344)
 texture = ExtResource("1_6c7dr")
 
 [node name="Player" parent="." instance=ExtResource("1_yxeuk")]
-speed = 100.0
