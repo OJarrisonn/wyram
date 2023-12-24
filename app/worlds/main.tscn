@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq21y5ao53x7c"]
+[gd_scene load_steps=4 format=3 uid="uid://dq21y5ao53x7c"]
 
 [ext_resource type="Texture2D" uid="uid://cmmc5nws8wgwp" path="res://icon.svg" id="1_6c7dr"]
 [ext_resource type="PackedScene" uid="uid://ct8eubxyhmhvv" path="res://gameobj/living/player/player.tscn" id="1_yxeuk"]
+[ext_resource type="PackedScene" uid="uid://cxtjmsjlprl38" path="res://gameobj/living/foo/foo.tscn" id="3_ld8ht"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,3 +12,10 @@ scale = Vector2(4.75, 3.52344)
 texture = ExtResource("1_6c7dr")
 
 [node name="Player" parent="." instance=ExtResource("1_yxeuk")]
+
+[node name="Foo" parent="." instance=ExtResource("3_ld8ht")]
+position = Vector2(-447, -119)
+
+[node name="Foo2" parent="." instance=ExtResource("3_ld8ht")]
+position = Vector2(-416, 197)
+foo_name = "foo2"

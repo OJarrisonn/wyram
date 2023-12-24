@@ -3,12 +3,10 @@
 [ext_resource type="Script" path="res://gameobj/living/player/player.gd" id="1_0fneq"]
 [ext_resource type="PackedScene" uid="uid://diwg2u05gihy2" path="res://gameobj/living/player/player_input.tscn" id="2_gm0xv"]
 [ext_resource type="Texture2D" uid="uid://bacmt3nxheqo1" path="res://assets/living/player/player.png" id="3_ioc8k"]
+[ext_resource type="PackedScene" uid="uid://bmbvkd4joc3fu" path="res://gameobj/living/player/player_zone.tscn" id="4_axp0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqn8"]
 size = Vector2(24, 57)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v6cn4"]
-radius = 175.026
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -27,10 +25,9 @@ shape = SubResource("RectangleShape2D_qiqn8")
 
 [node name="camera" type="Camera2D" parent="."]
 
-[node name="interaction_zone" type="Area2D" parent="."]
+[node name="player_zone" parent="." instance=ExtResource("4_axp0c")]
 
-[node name="shape" type="CollisionShape2D" parent="interaction_zone"]
-shape = SubResource("CircleShape2D_v6cn4")
-
+[connection signal="attack" from="player_input" to="." method="recv_attack"]
+[connection signal="interact" from="player_input" to="." method="recv_interact"]
 [connection signal="start_running" from="player_input" to="." method="recv_start_run"]
 [connection signal="stop_running" from="player_input" to="." method="recv_stop_run"]
