@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxtjmsjlprl38"]
+
+[ext_resource type="Script" path="res://gameobj/living/foo/foo.gd" id="1_paxwn"]
+[ext_resource type="Texture2D" uid="uid://cmmc5nws8wgwp" path="res://icon.svg" id="2_uybwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6epuq"]
+size = Vector2(128, 130)
+
+[node name="Foo" type="CharacterBody2D"]
+script = ExtResource("1_paxwn")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_uybwc")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6epuq")
