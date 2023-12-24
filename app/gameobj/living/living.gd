@@ -10,13 +10,9 @@ signal died
 var _life_points: int = 0
 
 
-@export var step_size: float = 2.75
+@export var speed: float = 20.
 @export var run_multiplier: float = 2
-@export var max_steps: int = 4
-@export var steps_interval: float = 0.15
 
-var remaining_steps = 0
-var step_timer = 0.0
 var is_running = false
 
 func take_damage(damage: int) -> void:
@@ -31,12 +27,9 @@ func heal(points: int) -> void:
 	if _life_points > max_life:
 		_life_points = max_life
 
-func walk():
+func walk(dir: Vector2):
+	velocity = dir * speed * (run_multiplier if is_running else 1.0)
 	move_and_slide()
-	remaining_steps -= 1
-	step_timer = 0.0
-	if remaining_steps < 1:
-		velocity = Vector2.ZERO
 
 func die():
 	died.emit()

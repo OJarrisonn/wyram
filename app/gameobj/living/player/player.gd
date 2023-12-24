@@ -1,15 +1,9 @@
 extends "res://gameobj/living/living.gd"
 
 func _physics_process(delta):
-	print(velocity)
-	if remaining_steps > 0:
-		step_timer += delta
-		if step_timer >= steps_interval:
-			walk()
-
-func recv_movement(dir):
-	velocity = (step_size * (run_multiplier if is_running else 1)) * 1000 * Vector2(cos(dir), sin(dir))
-	remaining_steps = max_steps
+	var move_dir: Vector2 = Input.get_vector("east", "west", "north", "south")
+	if move_dir.length() > 0:
+		walk(move_dir * delta * 1000)
 
 func recv_start_run():
 	is_running = true
