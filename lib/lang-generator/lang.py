@@ -2,7 +2,7 @@ from random import choice
 
 class Syllable:
     def __init__(self) -> None:
-        self.__vowels = [
+        self.__rhyme = [
             'a', 'am', 'aq', 'as', 'al', 'ar',
             'e', 'en', 'ek', 'ec', 'ew', 'eh',
             'i', 'in', 'ik', 'ic', 'iw', 'ih',
@@ -12,7 +12,7 @@ class Syllable:
             'u', 'um', 'uq', 'us', 'ur',
         ]
 
-        self.__consonants = [
+        self.__onset = [
             'b', 'bh', 
             'd', 'dx',
             'f', 
@@ -27,4 +27,4 @@ class Syllable:
         ]
     
     def generate(self) -> list[str]:
-        return [choice(self.__consonants), choice(self.__vowels)]
+        return [choice(self.__onset), choice(self.__rhyme)]
