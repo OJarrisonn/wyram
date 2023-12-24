@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct8eubxyhmhvv"]
+[gd_scene load_steps=6 format=3 uid="uid://ct8eubxyhmhvv"]
 
 [ext_resource type="Script" path="res://gameobj/living/player/player.gd" id="1_0fneq"]
 [ext_resource type="PackedScene" uid="uid://diwg2u05gihy2" path="res://gameobj/living/player/player_input.tscn" id="2_gm0xv"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqn8"]
 size = Vector2(24, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6cn4"]
+radius = 175.026
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -23,6 +26,11 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_qiqn8")
 
 [node name="camera" type="Camera2D" parent="."]
+
+[node name="interaction_zone" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="interaction_zone"]
+shape = SubResource("CircleShape2D_v6cn4")
 
 [connection signal="start_running" from="player_input" to="." method="recv_start_run"]
 [connection signal="stop_running" from="player_input" to="." method="recv_stop_run"]
