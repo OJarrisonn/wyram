@@ -9,11 +9,16 @@ signal died
 
 var _life_points: int = 0
 
-
 @export var speed: float = 20.
 @export var run_multiplier: float = 2
 
 var is_running = false
+var mouse_over = false
+
+func _ready():
+	add_to_group('attackable')
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 func take_damage(damage: int) -> void:
 	hurt.emit()
@@ -33,3 +38,11 @@ func walk(dir: Vector2):
 
 func die():
 	died.emit()
+
+func _on_mouse_entered():
+	print("Dento")
+	mouse_over = true
+
+func _on_mouse_exited():
+	print("Fora")
+	mouse_over = false
