@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmbvkd4joc3fu"]
+
+[ext_resource type="Script" path="res://gameobj/living/player/player_zone.gd" id="1_dvnbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6cn4"]
+radius = 175.026
+
+[node name="interaction_zone" type="Area2D"]
+script = ExtResource("1_dvnbd")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v6cn4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
