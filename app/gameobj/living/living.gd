@@ -40,11 +40,4 @@ func walk(dir: Vector2):
 func die():
 	print("[LV]: " + str(self) + "died")
 	died.emit()
-
-func _on_mouse_entered():
-	print("Dento")
-	mouse_over = true
-
-func _on_mouse_exited():
-	print("Fora")
-	mouse_over = false
+	queue_free()
