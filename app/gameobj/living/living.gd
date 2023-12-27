@@ -18,8 +18,6 @@ var mouse_over = false
 
 func _ready():
 	add_to_group('attackable')
-	mouse_entered.connect(_on_mouse_entered)
-	mouse_exited.connect(_on_mouse_exited)
 
 func take_damage(damage: int) -> void:
 	hurt.emit()
