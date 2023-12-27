@@ -7,15 +7,16 @@ func _ready():
 
 func _physics_process(delta):
 	var move_dir: Vector2 = Input.get_vector("east", "west", "north", "south")
+	
 	if move_dir.length() > 0:
 		walk(move_dir * delta * 1000)
-
+	
 	cursor.update()
 
 func attack():
 	var target = cursor.get_attack_target()
 	print(target)
-
+	
 	if target is Living:
 		target.take_damage(base_damage)
 
@@ -33,4 +34,4 @@ func recv_attack():
 	attack()
 
 func recv_interact():
-	print("Player interacting")
+	interact()
