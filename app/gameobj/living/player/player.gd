@@ -1,6 +1,6 @@
 extends "res://gameobj/living/living.gd"
 
-@onready var zone = $player_zone
+@onready var cursor = $player_cursor
 
 
 
