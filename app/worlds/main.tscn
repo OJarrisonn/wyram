@@ -13,9 +13,23 @@ texture = ExtResource("1_6c7dr")
 
 [node name="Player" parent="." instance=ExtResource("1_yxeuk")]
 
-[node name="Foo" parent="." instance=ExtResource("3_ld8ht")]
+[node name="Foos" type="Node" parent="."]
+
+[node name="Foo1" parent="Foos" instance=ExtResource("3_ld8ht")]
 position = Vector2(-447, -119)
 
-[node name="Foo2" parent="." instance=ExtResource("3_ld8ht")]
+[node name="Foo2" parent="Foos" instance=ExtResource("3_ld8ht")]
 position = Vector2(-416, 197)
+foo_name = "foo2"
+
+[node name="Foo3" parent="Foos" instance=ExtResource("3_ld8ht")]
+position = Vector2(172, 460)
+foo_name = "foo2"
+
+[node name="Foo4" parent="Foos" instance=ExtResource("3_ld8ht")]
+position = Vector2(-211, -429)
+foo_name = "foo2"
+
+[node name="Foo5" parent="Foos" instance=ExtResource("3_ld8ht")]
+position = Vector2(437, -423)
 foo_name = "foo2"
