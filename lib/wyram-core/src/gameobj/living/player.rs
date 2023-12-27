@@ -1,6 +1,8 @@
 use godot::prelude::*;
 use godot::engine::{Sprite2D, ISprite2D};
 
+pub mod player_cursor;
+
 #[derive(GodotClass)]
 #[class(base=Sprite2D)]
 struct Player {
