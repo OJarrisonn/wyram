@@ -10,6 +10,7 @@ func _physics_process(delta):
 	if move_dir.length() > 0:
 		walk(move_dir * delta * 1000)
 
+	cursor.update()
 
 func attack():
 	for body in zone.attackables:
