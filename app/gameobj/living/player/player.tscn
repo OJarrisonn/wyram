@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_qiqn8")
 [node name="camera" type="Camera2D" parent="."]
 
 [node name="player_cursor" parent="." instance=ExtResource("4_s2jrd")]
+z_index = 1
 
 [connection signal="attack" from="player_input" to="." method="recv_attack"]
 [connection signal="interact" from="player_input" to="." method="recv_interact"]
