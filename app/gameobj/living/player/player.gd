@@ -1,8 +1,9 @@
 extends "res://gameobj/living/living.gd"
 
-@onready var cursor = $player_cursor
+@onready var zone = $player_zone
 
-
+func _ready():
+	print("[PL]: Ready")
 
 func _physics_process(delta):
 	var move_dir: Vector2 = Input.get_vector("east", "west", "north", "south")
