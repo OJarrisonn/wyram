@@ -13,15 +13,15 @@ func _physics_process(delta):
 	cursor.update()
 
 func attack():
-	for body in zone.attackables:
-		if body.mouse_over:
-			print(body)
+	var target = cursor.get_attack_target()
+	print(target)
 
-func _on_mouse_entered():
-	self.mouse_over = true
+	if target is Living:
+		target.take_damage(base_damage)
 
-func _on_mouse_exited():
-	self.mouse_over = false
+func interact():
+	var target = cursor.get_interact_target()
+	print("[PL] Interacting with " + str(target))
 
 func recv_start_run():
 	is_running = true
