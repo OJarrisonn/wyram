@@ -5,7 +5,7 @@ class_name Living
 signal hurt
 signal died
 
-@export var max_life: int = 1
+@export var base_damage: int = 1
 
 var __life_points: int = 1
 
