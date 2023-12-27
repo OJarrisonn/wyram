@@ -7,7 +7,7 @@ signal died
 
 @export var max_life: int = 0
 
-var _life_points: int = 0
+var __life_points: int = 1
 
 @export var speed: float = 20.
 @export var run_multiplier: float = 2
@@ -23,14 +23,14 @@ func _ready():
 func take_damage(damage: int) -> void:
 	hurt.emit()
 	
-	_life_points -= damage
-	if _life_points <= 0:
+	__life_points -= damage
+	if __life_points <= 0:
 		die()
 
 func heal(points: int) -> void:
-	_life_points += points
-	if _life_points > max_life:
-		_life_points = max_life
+	__life_points += points
+	if __life_points > max_life:
+		__life_points = max_life
 
 func walk(dir: Vector2):
 	velocity = dir * speed * (run_multiplier if is_running else 1.0)
