@@ -38,6 +38,7 @@ func walk(dir: Vector2):
 	move_and_slide()
 
 func die():
+	print("[LV]: " + str(self) + "died")
 	died.emit()
 
 func _on_mouse_entered():
