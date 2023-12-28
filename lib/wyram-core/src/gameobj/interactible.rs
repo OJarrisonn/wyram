@@ -1,7 +1,3 @@
-use godot::prelude::*;
-
-#[derive(GodotClass)]
-#[class(base=Node2D)]
-struct Interactible {
-
+pub trait Interactible {
+    fn get_interacted(&mut self);
 }
