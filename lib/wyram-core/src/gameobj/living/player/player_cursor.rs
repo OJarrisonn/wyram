@@ -15,8 +15,6 @@ struct PlayerCursor {
 #[godot_api]
 impl IArea2D for PlayerCursor {
     fn init(area: Base<Area2D>) -> Self {
-
-
         Self {
             range: 250.0,
             attackable_targets: vec![],
